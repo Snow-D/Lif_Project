@@ -1,13 +1,13 @@
-# Recherche de stage
+## Recherche de stage
 Application Web permettant d'avoir accès à un grand nombre d'offre de stage provenant de divers autrse sites (Indeed & LinkedIn principalement).
 
-# Installation
+## Installation
 ```
 npm install express
 npm install cheerio
 ```
 
-# Langage (Framework, etc...)
+## Langage (Framework, etc...)
 - Express JS
 - JS
 - Jquery
