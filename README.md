@@ -17,6 +17,11 @@ Quelques informations à propos des entreprises à l'origine de ces offres sont 
 - Bootstrap
 - API Google (Places API, Directions API, Maps JavaScript API)
 
+## Structure du code
+- Un côté serveur permettant de requêter & traiter les réponses (filtrage, traitement du rendu côté client, etc...) *server.js*
+- Script : requête, affichage, maps, offres etc... *script.js*
+- Page HTML résultant de la requête. *index.html*
+
 ## Installation
 - Installer *NodeJs* puis :
 ```
