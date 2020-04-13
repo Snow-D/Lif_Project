@@ -1,0 +1,45 @@
+#map {
+    height: 750px;
+    width: 100%;
+    border-radius: 8px;
+
+    opacity: 0.75;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);
+}
+                
+#body {
+    background-image: url("images/random_grey_variations.png");
+}
+
+#details {
+
+    background-image: url('images/gplaypattern.png'); 
+    border-radius: 0px 10px 10px 0px;  
+    padding-top: 15px; 
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);
+    
+}
+
+#nav {
+
+    background-image: url('images/gplaypattern.png'); 
+    border-radius: 10px 0px 0px 10px; 
+    padding-top: 15px; 
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);
+
+}
+
+#mainContainer {
+
+    width: 85%;  
+    border-radius: 10px;
+
+}
+
+#navbar {
+
+    width: 85%;
+     background-image: url('images/gplaypattern.png'); 
+     border-radius: 10px;
+
+}
