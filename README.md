@@ -28,10 +28,12 @@ Quelques informations au sujet des entreprises à l'origine de ces offres sont a
    - Page HTML résultant des requêtes.
 
 ## Installation
-- Installer *NodeJs* puis :
+- Installer *NodeJs* ainsi que *npm* (ubuntu) : 
 ```
-npm install
+sudo apt-get update
+sudo apt-get install nodejs npm
 ```
+- Pour [Windows](https://nodejs.org/en/download/).
 ## Démarrage
 ```
 node server.js
