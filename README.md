@@ -30,8 +30,7 @@ Quelques informations à propos des entreprises à l'origine de ces offres sont 
 ## Installation
 - Installer *NodeJs* puis :
 ```
-npm install express
-npm install cheerio
+npm install
 ```
 ## Démarrage
 ```
