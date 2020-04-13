@@ -1,14 +1,10 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser');
-global.fetch = require("node-fetch");
-
 const cheerio = require('cheerio');
 
-// var session = require('express-session');
-// var CASAuthentication = require('cas-authentication');
+global.fetch = require("node-fetch");
 
-const indeeed = 'https://www.indeed.fr/emplois';
 const apiKEY = "AIzaSyDqiQ4P9aYAR_FJFOlCJud3wlh9GKh8bA8"; 
 
 app.use('/', express.static('front'));
@@ -18,7 +14,7 @@ async function LatLngOffers(offers) {
 
   var companiesPosition = offers.map(async element => {
 
-    element.company = unescape(encodeURIComponent(element.company.split('.')[0]));
+    element.company = element.company.split('.')[0];
     element.location = encodeURIComponent(element.location.replace(" ", "+"));
 
     /*****   Requete pour récuper le 'place_id' des villes || Pour rappel : { company: '\n\nArmatis-lc', location: 'Caen' }   *****/
@@ -27,7 +23,7 @@ async function LatLngOffers(offers) {
     var id = await fetch(url_PlaceId_Company)
       .then(r => r.json());
 
-    /*****   Requete pour récuper les Latitudes/Longitudes des villes des entreprises  *****/
+    /*****   Requete pour récuper les Latitudes/Longitudes des villes ou se situe des entreprises  *****/
 
     if (id.status != "OK") {
       return;
@@ -42,7 +38,7 @@ async function LatLngOffers(offers) {
     let lat = latLng.result.geometry.location.lat;
     let lng = latLng.result.geometry.location.lng;
 
-    let url_Position_Company = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=8000&keyword=${element.company}&key=${apiKEY}`;
+    let url_Position_Company = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=10000&keyword=${element.company}&key=${apiKEY}`;
     var position = await fetch(url_Position_Company)
       .then(r => r.json());
 
@@ -103,12 +99,11 @@ function parseIndeed($) { // $ = cheerio.load(request);
   return results;
 }
 
-
 async function indeed(req) {
 
   let url = "";
 
-  url = `${indeeed}?q=${req.body.inputText}&l=${req.body.placeText}&sort=date&start=${req.body.pageNumber}`;
+  url = `https://www.indeed.fr/emplois?q=${req.body.inputText}&l=${req.body.placeText}&sort=date&start=${req.body.pageNumber}`;
 
   var request = await fetch(url)
     .then(r => r.text());
@@ -122,6 +117,7 @@ async function indeed(req) {
   return offers;
 
 }
+
 
 function parseLinkdIn($) { // $ = cheerio.load(request);
 
@@ -158,11 +154,11 @@ function parseLinkdIn($) { // $ = cheerio.load(request);
 async function linkedIn(req) {
 
   var input1 = req.body.inputText;
+
   input1 = input1.replace("+", "%20");
 
   let url = "";
 
-  // url = `https://fr.linkedin.com/jobs/search?keywords=${input1}&location=${req.body.placeText}`; // start=X affiche à partir de la X ème annonce donc 1ère requete => 25 annonces
   url = `https://fr.linkedin.com/jobs/api/seeMoreJobPostings/search?keywords=${input1}&location=${req.body.placeText}&position=1&pageNum=0&start=${req.body.pageNumberLinkedin}`;
 
   var request = await fetch(url)
