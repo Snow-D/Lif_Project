@@ -16,5 +16,9 @@ npm install cheerio
 
 ## Fonctionnement
 Notre plateforme reprend l'idée du regroupement de donnée d'un comparateur de vol c'est à dire qu'il se charge d'aller récuperer sur d'autre site les informations demander par l'utilisateur et affiche le tout.  
-Les recherches peuvent être filtré par provenance (Indeed, LinkedIn,...) mais aussi d'autre critère tel que les notes attribuées sur Google aux entreprises
+**Ces informations sont récupérées par le biais du scraping**  :squirrel:  
+Les recherches peuvent être filtré par provenance (Indeed, LinkedIn,...) mais aussi d'autre critère tel que les notes attribuées sur Google aux entreprises.
 
+## Divers
+
+[Cheerio](https://github.com/cheeriojs/cheerio)
