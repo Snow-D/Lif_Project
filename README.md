@@ -19,12 +19,13 @@ Quelques informations à propos des entreprises à l'origine de ces offres sont 
 
 ## Structure du code
 1. **_server.js_**
-   - Un côté serveur permettant de requêter & traiter les réponses (filtrage, traitement du rendu côté client, etc...)  
+   - Un côté serveur permettant de requêter & traiter les réponses (parsing, etc...)  
+   
 2. **_script.js_**
-   - requête, affichage, maps, offres etc...  
+   - requête, filtrage, maps, affichage etc...  
    
 3. **_index.html_**
-   - Page HTML résultant de la requête.
+   - Page HTML résultant des requêtes.
 
 ## Installation
 - Installer *NodeJs* puis :
