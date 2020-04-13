@@ -4,15 +4,15 @@ Application Web permettant d'avoir accès à un grand nombre d'offre de stage/em
 ## Fonctionnement
 Notre plateforme reprend l'idée du regroupement de donnée d'un comparateur de vol c'est à dire qu'il se charge d'aller récuperer sur d'autre site les informations demander par l'utilisateur et affiche le tout.  
 
-Les recherches peuvent être filtrées par provenance (Indeed, LinkedIn,...) mais aussi d'autre critère tel que les notes attribuées sur Google aux entreprises.  
+Les recherches peuvent être filtrées par provenance (Indeed, LinkedIn,...) mais aussi d'autre critère comme par exemple les notes attribuées sur Google aux entreprises.  
 
-Quelques informations à propos des entreprises à l'origine de ces offres sont aussi disponibles.
+Quelques informations au sujet des entreprises à l'origine de ces offres sont aussi disponibles.
 
 **Ces informations sont récupérées par le biais du scraping**  :shipit:
 
 ## Langage & outils (Framework, etc...)
-- Express JS
 - JS
+- Express JS
 - Jquery
 - Bootstrap
 - API Google (Places API, Directions API, Maps JavaScript API)
