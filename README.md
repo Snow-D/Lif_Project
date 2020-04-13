@@ -18,9 +18,13 @@ Quelques informations à propos des entreprises à l'origine de ces offres sont 
 - API Google (Places API, Directions API, Maps JavaScript API)
 
 ## Structure du code
-- Un côté serveur permettant de requêter & traiter les réponses (filtrage, traitement du rendu côté client, etc...) *server.js*
-- Script : requête, affichage, maps, offres etc... *script.js*
-- Page HTML résultant de la requête. *index.html*
+1. **_server.js_**
+   - Un côté serveur permettant de requêter & traiter les réponses (filtrage, traitement du rendu côté client, etc...)  
+2. **_script.js_**
+   - requête, affichage, maps, offres etc...  
+   
+3. **_index.html_**
+   - Page HTML résultant de la requête.
 
 ## Installation
 - Installer *NodeJs* puis :
