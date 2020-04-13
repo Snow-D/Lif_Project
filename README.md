@@ -16,7 +16,7 @@ Les recherches peuvent être filtrées par provenance (Indeed, LinkedIn,...) mai
 - API Google (Places API, Directions API, Maps JavaScript API)
 
 ## Installation
-- Installer NodeJs puis :
+- Installer *NodeJs* puis :
 ```
 npm install express
 npm install cheerio
@@ -25,7 +25,8 @@ npm install cheerio
 ```
 node server.js
 ```
-Se rendre sur *http://localhost:3030*  
+Se rendre sur *http://localhost:3030*.  
+
 Vous pouvez utiliser **_nodemon_** afin de ne pas avoir à redémarrer le serveur à chaque modification, **_nodemon_** s'en charge.
 ```
 npm install -g nodemon
