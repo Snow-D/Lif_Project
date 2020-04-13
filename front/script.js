@@ -19,7 +19,7 @@ function showDetailIndeed(data_jk) {
             var parser = new DOMParser();
             var htmlDoc = parser.parseFromString(text, 'text/html');
             var jobs = htmlDoc.getElementsByClassName('jobsearch-ViewJobLayout-jobDisplay');
-            
+
             for (let i = 0; i < jobs.length; i++) {
 
                 let result = {};
@@ -38,7 +38,7 @@ function showDetailIndeed(data_jk) {
 }
 
 function showDetailLinkedin(idOffer) {
-    
+
     fetch(`${server}/api/detailsLinkedin`, {
         method: 'post',
         mode: 'same-origin',
@@ -53,7 +53,7 @@ function showDetailLinkedin(idOffer) {
             var parser = new DOMParser();
             var htmlDoc = parser.parseFromString(text, 'text/html');
             var jobs = htmlDoc.getElementsByClassName('core-rail');
-            
+
             for (let i = 0; i < jobs.length; i++) {
 
                 let result = {};
@@ -78,7 +78,7 @@ function renderDetailsIndeed(results, details) {
 
     for (let i = 0; i < results.length; i++) {
 
-            test = `
+        test = `
             <div class="card" style="overflow:scroll; height: 75vh;">
             <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
             <div class="card-body">
@@ -87,12 +87,10 @@ function renderDetailsIndeed(results, details) {
             <p class="card-text">${results[i].summary}</p>
             </div>
             </div>
-                        `;
-                        
-            // <img src="indeed.jpg" width="30" height="30" "class="rounded float-right">
+            `;
 
-            details.innerHTML = test;
-        }
+        details.innerHTML = test;
+    }
 
     return details;
 }
@@ -105,7 +103,7 @@ function renderDetailsLinkedin(results, details) {
 
     for (let i = 0; i < results.length; i++) {
 
-            test = `
+        test = `
             <div class="card" style="overflow:scroll; height: 75vh;">
             <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
             <div class="card-body">
@@ -114,10 +112,9 @@ function renderDetailsLinkedin(results, details) {
             </div>
             </div>
             `;
-            // <h6 class="card-subtitle mb-2 text-muted">${results[i].duration}</h6>
-                        
-            details.innerHTML = test;
-        }
+
+        details.innerHTML = test;
+    }
 
     return details;
 }
@@ -145,7 +142,6 @@ $(function () {
     const resLinkedin = document.getElementById('linkedin');
 
 
-
     function validateInput() {
         var inputText = input.val();
 
@@ -167,6 +163,7 @@ $(function () {
 
     var inputs = validateInput();
 
+
     function initialRequestShowed(inputs) {
 
         fetch(`${server}/api/id`, {
@@ -181,6 +178,7 @@ $(function () {
             .then(json => {
                 map = vueMapLocation(json);
             });
+
 
         fetch(`${server}/api/search`, {
             method: 'post',
@@ -340,30 +338,14 @@ $(function () {
 
     function renderSearchIndeed(results, resSite) {
 
-        let test, test1;
+        let rendu;
         resSite.innerHTML = "";
 
         for (let i = 0; i < results.length; i++) {
 
             if (results[i].site == "indeed") {
 
-                test1 = `
-                    <div class="card">
-                    <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
-                        <div class="card-body">
-                            <h6 class="card-subtitle mb-2 text-muted">${results[i].company}</h6>
-                            <p class="card-text">${results[i].summary}</p>
-                            <p class="card-text">Posté : ${results[i].date}</p>
-                            <button type="button" class="btn btn-outline-primary" data-toggle="popover" title="Popover title" 
-                            <a class="btn btn-outline-info" href="https://www.indeed.fr/voir-emploi?jk=${results[i].data_jk}" target="_blank">Accèder au site</a>  
-                            data-content="And here's some amazing content. It's very engaging. Right?">Détail de l'annonce</button>
-                            </div >
-                            </div>
-                            <br>
-                            `;
-
-
-                test = `
+                rendu = `
                         <div class="card">
                         <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
                         <div class="card-body">
@@ -378,9 +360,8 @@ $(function () {
                         </div>
                         <br>
                         `;
-                // <img src="indeed.jpg" width="30" height="30" "class="rounded float-right">
 
-                resSite.innerHTML += test;
+                resSite.innerHTML += rendu;
             }
         }
 
@@ -389,7 +370,7 @@ $(function () {
 
     function renderSearchLinkedin(results, resSite) {
 
-        let test, test1;
+        let rendu;
 
         resSite.innerHTML = "";
 
@@ -397,22 +378,8 @@ $(function () {
 
             if (results[i].site == "linkedin") {
 
-                // test1 = `
-                //     <div class="card">
-                //     <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
-                //         <div class="card-body">
-                //             <h6 class="card-subtitle mb-2 text-muted">${results[i].company}</h6>
-                //             <p class="card-text">${results[i].summary}</p>
-                //             <p class="card-text">Posté : ${results[i].date}</p>
-                //             <button type="button" class="btn btn-outline-primary" data-toggle="popover" title="Popover title" 
-                //             <a class="btn btn-outline-info" href="https://www.indeed.fr/voir-emploi?jk=${results[i].data_jk}" target="_blank">Accèder au site</a>  
-                //             data-content="And here's some amazing content. It's very engaging. Right?" onclick="renderDetailsLinkedin('${results[i].idOffer}')>Détail de l'annonce</button>
-                //             </div >
-                //             </div>
-                //             <br>
-                //             `;
 
-                test = `
+                rendu = `
                         <div class="card">
                         <h5 class="card-header" id="titreStage" >${results[i].title}</h5>
                         <div class="card-body">
@@ -428,7 +395,7 @@ $(function () {
                         <br>
                         `;
 
-                resSite.innerHTML += test;
+                resSite.innerHTML += rendu;
             }
         }
 
@@ -658,9 +625,6 @@ $(function () {
                 }
             ]
         });
-
-        // map.setCenter({ lat: parseFloat(position[0].lat), lng: parseFloat(position[0].lng) });
-        // map.setZoom(11);
 
         return map;
     }

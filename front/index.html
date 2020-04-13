@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Indeed</title>
+    <title>POGGERS</title>
 
     <!-- SCRIPT -->
 
@@ -38,7 +38,7 @@
 
     <!-- Bar de recherche & bouttons -->
 
-        <div class="container-fluid border mt-3" style="width: 85%; background-image: url('gplaypattern.png'); border-radius: 10px;">
+        <div class="container-fluid border mt-3" id="navbar">
             <div class="form-group mt-2">
                 <div class="row">
                     <div class="col-4">
@@ -77,14 +77,11 @@
 
     <!-- Affichage du scraping ainsi que la Map google -->
 
-        <div class="container-fluid mt-4" style="width: 85%;  border-radius: 10px;">
+        <div class="container-fluid mt-4" id="mainContainer">
             <div class="row">
-                <div class="col-lg-4 mt-3"  style="background-image: url('gplaypattern.png'); border-radius: 10px 0px 0px 10px; padding-top: 15px; box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);">
+                <div class="col-lg-4 mt-3"  id="nav">
 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <!-- <li class="nav-item">
-                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#all" role="tab" aria-controls="home" aria-selected="true">All</a>
-                        </li> -->
                         <li class="nav-item">
                           <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#indeed" role="tab" aria-controls="profile" aria-selected="false">Indeed</a>
                         </li>
@@ -95,8 +92,6 @@
                     
                     <div style="overflow:scroll; height: 65vh;">
                         <div class="tab-content py-5">
-                            <!-- <div class="tab-pane active" id="all indeed linkedin">
-                            </div> -->
                             <div class="tab-pane active" id="indeed" style="padding: 10px;">
                             </div>
                             <div class="tab-pane fade" id="linkedin">
@@ -126,7 +121,7 @@
 
                 </div>
 
-                <div class="col-lg-4 mt-3 border-left" id="details" style="background-image: url('gplaypattern.png'); border-radius: 0px 10px 10px 0px;  padding-top: 15px; box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);">
+                <div class="col-lg-4 mt-3 border-left" id="details">
 
                     <br>
 
@@ -138,22 +133,6 @@
 
             </div>           
         </div>
-
-<style>
-    #map {
-        height: 750px;
-        width: 100%;
-        border-radius: 8px;
-
-        opacity: 0.75;
-        box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .4);
-    }
-                    
-    #body {
-        background-image: url("random_grey_variations.png");
-    }
-
-</style>
         
      <!-- FIN  Affichage du scraping ainsi que la Map google --> 
      
