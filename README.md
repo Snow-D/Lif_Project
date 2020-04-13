@@ -14,7 +14,7 @@ Quelques informations au sujet des entreprises à l'origine de ces offres sont a
 - JS
 - Express JS
 - Jquery
-- Bootstrap
+- Bootstrap 4
 - API Google (Places API, Directions API, Maps JavaScript API)
 
 ## Structure du code
