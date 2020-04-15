@@ -15,6 +15,7 @@ Quelques informations au sujet des entreprises à l'origine de ces offres sont a
 - JS
 - Express JS
 - Jquery
+- Cheerio
 - Bootstrap 4
 - API Google (Places API, Directions API, Maps JavaScript API)
 
