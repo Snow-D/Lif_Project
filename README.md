@@ -6,9 +6,10 @@ Notre plateforme reprend l'idée du regroupement de donnée d'un comparateur de 
 
 Les recherches peuvent être filtrées par provenance (Indeed, LinkedIn,...) mais aussi d'autre critère comme par exemple les notes attribuées sur Google aux entreprises.  
 
+**Ces informations sont récupérées par le biais du scraping**  :shipit:
+
 Quelques informations au sujet des entreprises à l'origine de ces offres sont aussi disponibles.
 
-**Ces informations sont récupérées par le biais du scraping**  :shipit:
 
 ## Langage & outils (Framework, etc...)
 - JS
